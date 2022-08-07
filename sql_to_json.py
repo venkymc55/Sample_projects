@@ -28,7 +28,7 @@ try:
                 FROM Students
                 """)
     rows = cursor.fetchall()
-except DatabaseError  as e:
+except DatabaseError as e:
     if e.args[1] == '#42000Unknown database \'{0}\''.format(db_name):
         raise DatabaseNotExistsError
     else:
